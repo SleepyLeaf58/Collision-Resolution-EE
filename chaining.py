@@ -1,3 +1,5 @@
+# Code is taken from https://www.geeksforgeeks.org/implementation-of-hash-table-in-python-using-separate-chaining/
+
 class Node: 
     def __init__(self, key, value): 
         self.key = key 
@@ -23,7 +25,7 @@ class ChainingHashTable:
         else: 
             current = self.table[index] 
             while current: 
-                if current.key == key: 
+                if current.key == key:  
                     current.value = value 
                     return
                 current = current.next
@@ -65,7 +67,7 @@ class ChainingHashTable:
     def __len__(self): 
         return self.size 
   
-    def __contains__(self, key): 
+    def contains(self, key): 
         try: 
             self.search(key) 
             return True
